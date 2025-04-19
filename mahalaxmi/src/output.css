@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-white: #fff;
@@ -236,26 +237,14 @@
   .h-full {
     height: 100%;
   }
-  .max-h-\[90vh\] {
-    max-height: 90vh;
+  .max-h-\[50vh\] {
+    max-height: 50vh;
   }
   .min-h-\[90vh\] {
     min-height: 90vh;
   }
   .w-2\.5 {
     width: calc(var(--spacing) * 2.5);
-  }
-  .w-2\/5 {
-    width: calc(2/5 * 100%);
-  }
-  .w-2\/6 {
-    width: calc(2/6 * 100%);
-  }
-  .w-3\/5 {
-    width: calc(3/5 * 100%);
-  }
-  .w-4\/6 {
-    width: calc(4/6 * 100%);
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -322,13 +311,6 @@
       margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-x-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -347,14 +329,6 @@
   .rounded-t-2xl {
     border-top-left-radius: var(--radius-2xl);
     border-top-right-radius: var(--radius-2xl);
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
-  .border-y-2 {
-    border-block-style: var(--tw-border-style);
-    border-block-width: 2px;
   }
   .border-t {
     border-top-style: var(--tw-border-style);
@@ -375,6 +349,9 @@
   }
   .bg-\[\#ffff0\] {
     background-color: #ffff0;
+  }
+  .bg-amber-600 {
+    background-color: var(--color-amber-600);
   }
   .bg-iravi {
     background-color: var(--color-iravi);
@@ -403,9 +380,6 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .py-0 {
-    padding-block: calc(var(--spacing) * 0);
-  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -424,20 +398,8 @@
   .pe-2 {
     padding-inline-end: calc(var(--spacing) * 2);
   }
-  .pt-0 {
-    padding-top: calc(var(--spacing) * 0);
-  }
-  .pt-8 {
-    padding-top: calc(var(--spacing) * 8);
-  }
   .pt-\[72px\] {
     padding-top: 72px;
-  }
-  .pb-0 {
-    padding-bottom: calc(var(--spacing) * 0);
-  }
-  .pb-8 {
-    padding-bottom: calc(var(--spacing) * 8);
   }
   .pb-36 {
     padding-bottom: calc(var(--spacing) * 36);
@@ -553,9 +515,19 @@
       width: calc(1/4 * 100%);
     }
   }
+  .md\:w-2\/5 {
+    @media (width >= 48rem) {
+      width: calc(2/5 * 100%);
+    }
+  }
   .md\:w-3\/4 {
     @media (width >= 48rem) {
       width: calc(3/4 * 100%);
+    }
+  }
+  .md\:w-3\/5 {
+    @media (width >= 48rem) {
+      width: calc(3/5 * 100%);
     }
   }
   .md\:grid-cols-3 {
@@ -950,11 +922,6 @@
   inherits: false;
   initial-value: 0;
 }
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -972,7 +939,6 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;

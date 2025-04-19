@@ -65,7 +65,7 @@
             src="./images/homeBanner.png"
             alt="hero"
             lazyload="true"
-            class="w-full md:object-fill object-center min-h-[90vh] max-h-[90vh] md:max-h-[90vh] md:min-h-[640px] rounded-3xl"
+            class="w-full md:object-fill object-center min-h-[90vh] max-h-[50vh] md:max-h-[90vh] md:min-h-[640px] rounded-3xl"
           />
         </picture>
       </div>
@@ -229,8 +229,10 @@
     <section class="bg-natural-dark py-36">
       <div class="max-w-screen-3xl mx-auto px-3 md:px-(--space)">
         <!--slider-->
-        <div class="flex justify-between items-center mt-12 gap-20">
-          <div class="w-3/5 overflow-hidden">
+        <div
+          class="flex justify-between items-center mt-12 gap-20 md:flex-row flex-col"
+        >
+          <div class="w-full md:w-3/5 overflow-hidden">
             <h1 class="text-4xl md:text-56 text-white leading-14 md:leading-24">
               Our <span class="font-redaction">Highlight</span>
             </h1>
@@ -252,9 +254,9 @@
               </div>
             </div>
           </div>
-          <div class="w-2/5">
+          <div class="w-full md:w-2/5">
             <div
-              class="flex items-start md:flex-row flex-col gap-6 border-b-2 py-8 border-Luminous intersect:motion-preset-slide-up motion-delay-0"
+              class="flex items-start gap-6 border-b-2 py-8 border-Luminous intersect:motion-preset-slide-up motion-delay-0"
             >
               <div>
                 <img
@@ -335,10 +337,5 @@
       </div>
     </section>
     <!--Our Highlight end-->
-    <script>
-      import { Observer } from "tailwindcss-intersect";
-
-      Observer.start();
-    </script>
   </body>
 </html>
